@@ -14,5 +14,4 @@ public class LoginController {
     @FXML
     private static String loggedRole;
 
-    public static String getLoggedUsername() { return loggedUsername;}
 }
