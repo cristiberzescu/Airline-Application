@@ -9,14 +9,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #CACFD2;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #CACFD2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.LoginController">
    <children>
       <Text layoutX="80.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to our Log In form!" wrappingWidth="497.46417236328125">
          <font>
             <Font name="Centaur" size="45.0" />
          </font>
-
       </Text>
+      <Button layoutX="263.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="37.0" prefWidth="86.0" text="Log In">
+         <font>
+            <Font name="Times New Roman" size="19.0" />
+         </font>
+      </Button>
       <Text layoutX="487.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not registered yet?">
          <font>
             <Font name="Times New Roman" size="17.0" />
@@ -27,9 +31,9 @@
             <Font name="Times New Roman" size="19.0" />
          </font>
       </Button>
-      <Button layoutX="263.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="37.0" prefWidth="86.0" text="Log In">
+      <Button layoutX="260.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="37.0" prefWidth="99.0" text="Log In">
          <font>
-            <Font name="Times New Roman" size="19.0" />
+            <Font name="Times New Roman" size="22.0" />
          </font>
       </Button>
       <ImageView fitHeight="200.0" fitWidth="140.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
