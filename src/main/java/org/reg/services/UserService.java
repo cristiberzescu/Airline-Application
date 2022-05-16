@@ -2,6 +2,7 @@ package org.reg.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.reg.exceptions.PasswordIncorrectException;
 import org.reg.model.User;
 import org.reg.exceptions.WrongPasswordException;
 
@@ -10,7 +11,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Objects;
-
 
 import static org.reg.services.FileSystemService.getPathToFile;
 
@@ -29,14 +29,34 @@ public class UserService {
 
         userRepository = database.getRepository(User.class);
     }
-    public static void loginUser(String username, String password) throws WrongPasswordException {
-        checkPassword(password, username);
+
+    public static void addUser(String username, String password, String role, String name, String eMail, String phoneNumber) {
+        userRepository.insert(new User(username, encodePassword(username, password), role, name, eMail, phoneNumber));
     }
+
+    public static void addUser(String username, String password, String role, String name, String eMail, String phoneNumber, String personalKey) {
+        userRepository.insert(new User(username, encodePassword(username, password), role, name, eMail, phoneNumber, personalKey));
+    }
+
     public static List<User> getAllUsers() {
         return userRepository.find().toList();
     }
 
-    public static ObjectRepository<User> getUsers() {return userRepository;}
+    public static void loginUser(String username, String password) throws WrongPasswordException {
+        checkPassword(password, username);
+    }
+
+    public static boolean checkUserDoesAlreadyExist(String username, String password) throws PasswordIncorrectException{
+        for (User user : userRepository.find()) {
+            if (Objects.equals(username, user.getUsername())) {
+                if(!Objects.equals(user.getPassword(), encodePassword(username,password)))
+                    throw new PasswordIncorrectException(password);
+                else return true;
+            }
+        }
+        return false;
+    }
+
     public static void checkPassword(String password, String username) throws WrongPasswordException {
         int ok = 0;
         for(User user : userRepository.find()) {
@@ -50,6 +70,7 @@ public class UserService {
             throw new WrongPasswordException();
         }
     }
+
     public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
@@ -60,6 +81,7 @@ public class UserService {
         return new String(hashedPassword, StandardCharsets.UTF_8)
                 .replace("\"", ""); //to be able to save in JSON format
     }
+
     private static MessageDigest getMessageDigest() {
         MessageDigest md;
         try {
@@ -69,6 +91,17 @@ public class UserService {
         }
         return md;
     }
+    public static ObjectRepository<User> getUsers() {return userRepository;}
+
+    public static User getUserFromDatabase(String username) {
+        for(User user : userRepository.find()) {
+            if(user.getUsername().equals(username)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
     public static Nitrite getDatabase() {
         return database;
     }

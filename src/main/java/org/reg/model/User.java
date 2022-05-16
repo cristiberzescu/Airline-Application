@@ -9,20 +9,22 @@ public class User {
     private String username;
     private String password;
     private String role;
-    private String phoneNumber, name, personalKey;
+    private String eMail, phoneNumber, name, personalKey;
 
-    public User(String username, String password, String role, String name, String phoneNumber) {
+    public User(String username, String password, String role, String name, String eMail, String phoneNumber) {
         this.username = username;
         this.password = password;
         this.role = role;
+        this.eMail = eMail;
         this.phoneNumber = phoneNumber;
         this.name = name;
     }
 
-    public User(String username, String password, String role, String name, String phoneNumber, String personalKey) {
+    public User(String username, String password, String role, String name, String eMail, String phoneNumber, String personalKey) {
         this.username = username;
         this.password = password;
         this.role = role;
+        this.eMail = eMail;
         this.phoneNumber = phoneNumber;
         this.name = name;
         this.personalKey = personalKey;
@@ -61,6 +63,10 @@ public class User {
     public String getName() {return name;}
 
     public void setName() {this.name = name;}
+
+    public String geteMail() {return eMail;}
+
+    public void seteMail() { this.eMail = eMail;}
 
     public String getPhoneNumber() {return phoneNumber;}
 
