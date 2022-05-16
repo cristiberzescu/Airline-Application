@@ -58,7 +58,27 @@ public class RegisterController {
                 }
             }
 
-
+            if(!test) {
+                if (((String) role.getValue()).equals("Customer")) {
+                    FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("registerCustomer.fxml"));
+                    Parent root = (Parent) loader.load();
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                    RegisterCustomerController reg = loader.getController();
+                    reg.setUsernameField(usernameField);
+                    reg.setPasswordField(passwordField);
+                    reg.setRole(role);
+                } else if (((String) role.getValue()).equals("Administrator")) {
+                    FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("registerAdministrator.fxml"));
+                    Parent root = (Parent) loader.load();
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                    RegisterAdministratorController reg = loader.getController();
+                    reg.setUsernameField(usernameField);
+                    reg.setPasswordField(passwordField);
+                    reg.setRole(role);
+                }
+            }
         } catch (PasswordIncorrectException e) {
             message.setText(e.getMessage());
         } catch (IOException e) {
