@@ -11,7 +11,7 @@
             <Font name="Centaur" size="57.0" />
         </font>
     </Text>
-    <Text layoutX="170.0" layoutY="423.0" strokeWidth="0.0" text="Enter your credentials in the fields above" >
+    <Text layoutX="190.0" layoutY="423.0" strokeWidth="0.0" text="Enter your credentials in the fields above" >
         <font>
             <Font name="Calibri Italic" size="18.0" />
         </font>
@@ -24,10 +24,19 @@
     <PasswordField fx:id="passwordField" layoutX="214.0" layoutY="221.0" prefHeight="26.0" prefWidth="242.0" promptText="*Password">
         <font>
             <Font name="Times New Roman" size="14.0" />
-        </font></PasswordField>
+        </font>
+    </PasswordField>
+    <ChoiceBox fx:id="role" layoutX="260.0" layoutY="254.0" prefWidth="150.0">
+    </ChoiceBox>
+    <Text fx:id="message" fill="#e20909" layoutX="31.0" layoutY="369.0" wrappingWidth="442.200048828125" />
     <Button fx:id="registerButton" layoutX="276.0" layoutY="298.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="42.0" prefWidth="118.0" text="Register!" textAlignment="CENTER" textFill="#0c1649">
         <font>
             <Font name="Times New Roman" size="19.0" />
+        </font>
+    </Button>
+    <Button fx:id="backButton" layoutX="520.0" layoutY="394.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="49.0" prefWidth="125.0" text="Back to Login">
+        <font>
+            <Font name="Times New Roman" size="16.0" />
         </font>
     </Button>
     <ImageView fitHeight="200.0" fitWidth="140.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
