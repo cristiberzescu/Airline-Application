@@ -5,10 +5,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="520.0" prefWidth="650.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.ViewEnrolledFlightController">
+<AnchorPane prefHeight="520.0" prefWidth="650.0" style="-fx-background-color: #CACFD2;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.ViewEnrolledFlightController">
     <children>
-        <TableView fx:id="flightsTableView" layoutX="25.0" layoutY="138.0" prefHeight="297.0" prefWidth="600.0" style="-fx-background-color: cyan;" />
-        <Button fx:id="backButton" layoutX="504.0" layoutY="447.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="103.0" text="Back">
+        <TableView fx:id="flightsTableView" layoutX="25.0" layoutY="126.0" prefHeight="297.0" prefWidth="600.0" style="-fx-background-color: cyan;" />
+        <Button fx:id="backButton" layoutX="273.0" layoutY="424.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="103.0" text="Back">
             <font>
                 <Font name="Centaur" size="33.0" />
             </font></Button>
@@ -17,7 +17,7 @@
                 <Image url="@logo1.png" />
             </image>
         </ImageView>
-        <Text layoutX="77.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here you have a list with all the flights you enrolled to, dear customer" wrappingWidth="358.13671875">
+        <Text layoutX="81.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here you have a list with all the flights you enrolled to, dear customer" wrappingWidth="358.13671875">
             <font>
                 <Font name="Centaur" size="24.0" />
             </font>
