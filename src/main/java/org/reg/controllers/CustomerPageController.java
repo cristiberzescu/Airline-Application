@@ -5,11 +5,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 public class CustomerPageController {
-
+    @FXML
+    private Button logoutButton;
+    @FXML
+    private Button enrollButton;
     @FXML
     public void handleLogout(javafx.event.ActionEvent login) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
@@ -17,6 +21,16 @@ public class CustomerPageController {
         Parent viewLogin = Loader.load();
         Scene LoginScene = new Scene(viewLogin, 650, 450);
         Stage window = (Stage) ((Node) login.getSource()).getScene().getWindow();
+        window.setScene(LoginScene);
+        window.show();
+    }
+    @FXML
+    public void handleEnroll(javafx.event.ActionEvent enrollPage) throws IOException {
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getClassLoader().getResource("enrollFlightPage.fxml"));
+        Parent viewFlights = Loader.load();
+        Scene LoginScene = new Scene(viewFlights, 650, 520);
+        Stage window = (Stage) ((Node) enrollPage.getSource()).getScene().getWindow();
         window.setScene(LoginScene);
         window.show();
     }
