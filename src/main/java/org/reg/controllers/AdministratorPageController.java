@@ -41,8 +41,11 @@ public class AdministratorPageController {
     }
     @FXML
     public void handleAddFlight(javafx.event.ActionEvent addFlight) throws Exception {
-
-
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("addFlightPage.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) (addButton.getScene().getWindow());
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
 }
