@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.reg.exceptions.WrongPasswordException;
 import org.reg.model.User;
+import org.reg.services.FlightService;
 import org.reg.services.UserService;
 
 import java.io.IOException;
@@ -56,7 +57,7 @@ public class LoginController {
                 window.setScene(administratorPageScene);
                 window.show();
             }
-
+            FlightService.initDatabase();
         } catch (WrongPasswordException e) {
             password.clear();
         }
@@ -66,7 +67,7 @@ public class LoginController {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("register.fxml"));
         Parent viewRegister = Loader.load();
-        Scene RegisterScene = new Scene(viewRegister, 650, 450);
+        Scene RegisterScene = new Scene(viewRegister, 590, 450);
         Stage window = (Stage) ((Node) register.getSource()).getScene().getWindow();
         window.setScene(RegisterScene);
         window.show();
