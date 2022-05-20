@@ -19,4 +19,8 @@ public class AddFlightController {
         window.setScene(AdminScene);
         window.show();
     }
+    @FXML
+    public void handleSaveFlight() throws Exception {
+
+    }
 }

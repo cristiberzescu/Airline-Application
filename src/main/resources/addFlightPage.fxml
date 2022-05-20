@@ -12,6 +12,11 @@
             <Font name="Centaur" size="27.0" />
          </font>
       </Button>
+      <Button fx:id="saveButton" layoutX="340.0" layoutY="379.0" mnemonicParsing="false" onAction="#handleSaveFlight" prefHeight="62.0" prefWidth="111.0" text="Save">
+         <font>
+            <Font name="Centaur" size="27.0" />
+         </font>
+      </Button>
       <TextField fx:id="flightClass" layoutX="160.0" layoutY="313.0" promptText="Flight Class">
          <font>
             <Font name="Centaur" size="18.0" />
