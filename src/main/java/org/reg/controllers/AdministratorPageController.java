@@ -48,4 +48,5 @@ public class AdministratorPageController {
         stage.show();
     }
 
+
 }
