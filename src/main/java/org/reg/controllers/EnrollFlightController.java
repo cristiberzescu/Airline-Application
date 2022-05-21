@@ -21,6 +21,7 @@ import java.io.IOException;
 public class EnrollFlightController {
     @FXML
     Button backButton;
+    @FXML
     Button enrollButton;
     @FXML
     TableView flightsTableView;
