@@ -4,6 +4,8 @@ import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.reg.model.Flight;
 
+
+
 import static org.reg.services.FileSystemService.getPathToFlight;
 
 public class FlightService {
@@ -23,5 +25,8 @@ public class FlightService {
         flightRepository.insert(new Flight(id, personalKey, code, name, source, destination, capacity, flightClass));
     }
 
+    public static ObjectRepository<Flight> getFlightRepository() {
+        return flightRepository;
+    }
 
 }
