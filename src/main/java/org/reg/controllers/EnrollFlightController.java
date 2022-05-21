@@ -13,10 +13,10 @@ import org.reg.model.Flight;
 import org.reg.model.User;
 import org.reg.services.FlightService;
 import org.reg.services.UserService;
+import javafx.event.ActionEvent;
+import javafx.util.Callback;
 
 import java.io.IOException;
-
-
 
 public class EnrollFlightController {
     @FXML
@@ -85,13 +85,47 @@ public class EnrollFlightController {
         window.setScene(LoginScene);
         window.show();
     }
-    public void handleViewEnroll(javafx.event.ActionEvent login) throws IOException {
-        FXMLLoader Loader = new FXMLLoader();
-        Loader.setLocation(getClass().getClassLoader().getResource("viewEnrolledFlightPage.fxml"));
-        Parent viewLogin = Loader.load();
-        Scene LoginScene = new Scene(viewLogin, 650, 520);
-        Stage window = (Stage) ((Node) login.getSource()).getScene().getWindow();
-        window.setScene(LoginScene);
-        window.show();
+    @FXML
+    private void handleViewEnroll(ActionEvent actionEvent) {
+        TableColumn<Flight, Void> colBtn = new TableColumn();
+
+        Callback<TableColumn<Flight, Void>, TableCell<Flight, Void>> cellFactory = new Callback<TableColumn<Flight, Void>, TableCell<Flight, Void>>() {
+            @Override
+            public TableCell<Flight, Void> call(final TableColumn<Flight, Void> param) {
+                final TableCell<Flight, Void> cell = new TableCell<Flight, Void>() {
+
+                    private final Button btn = new Button("Enroll");
+                    {
+                        btn.setOnAction((ActionEvent event) -> {
+
+                            Flight selectedFlight = getTableView().getItems().get(getIndex());
+
+                            String name = UserService.getUserFromDatabase(LoginController.getLoggedUsername()).getName();
+                            selectedFlight.getEnrolledPassengers().add(name);
+
+                            FlightService.getFlightRepository().update(selectedFlight);
+                            btn.setDisable(true);
+                        });
+                    }
+
+                    @Override
+                    public void updateItem(Void item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(btn);
+                        }
+                    }
+                };
+                return cell;
+            }
+        };
+
+        colBtn.setCellFactory(cellFactory);
+
+        flightsTableView.getColumns().add(colBtn);
+
+
     }
 }
