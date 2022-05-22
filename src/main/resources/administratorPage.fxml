@@ -22,7 +22,7 @@
                 <Font name="Times New Roman" size="20.0" />
             </font>
         </Button>
-        <Button fx:id="flightListButton" layoutX="22.0" layoutY="196.0" mnemonicParsing="false"  prefHeight="52.0" prefWidth="203.0" text="View all flights!">
+        <Button fx:id="flightListButton" onAction="#handleShowFlights" layoutX="22.0" layoutY="196.0" mnemonicParsing="false"  prefHeight="52.0" prefWidth="203.0" text="View all flights!">
          <font>
             <Font name="Centaur" size="27.0" />
          </font>

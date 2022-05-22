@@ -20,6 +20,8 @@ public class ViewFlightController {
     @FXML
     Button backButton;
     @FXML
+    Button backButtonAdministrator;
+    @FXML
     TableView flightsTableView;
     @FXML
     public void handleBack(javafx.event.ActionEvent customerPage) throws IOException {
@@ -28,6 +30,16 @@ public class ViewFlightController {
         Parent viewCustomer = Loader.load();
         Scene LoginScene = new Scene(viewCustomer, 650, 450);
         Stage window = (Stage) ((Node) customerPage.getSource()).getScene().getWindow();
+        window.setScene(LoginScene);
+        window.show();
+    }
+    @FXML
+    public void handleBackAdministrator(javafx.event.ActionEvent administratorPage) throws IOException {
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getClassLoader().getResource("administratorPage.fxml"));
+        Parent viewCustomer = Loader.load();
+        Scene LoginScene = new Scene(viewCustomer, 650, 450);
+        Stage window = (Stage) ((Node) administratorPage.getSource()).getScene().getWindow();
         window.setScene(LoginScene);
         window.show();
     }
