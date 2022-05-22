@@ -26,5 +26,10 @@
          <font>
             <Font name="Centaur" size="27.0" />
          </font></Button>
+        <Button fx:id="enrolledListButton" layoutX="14.0" layoutY="168.0" mnemonicParsing="false" onAction="#handleEnrolledFlights" prefHeight="52.0" prefWidth="247.0" text="List enrolled flights!">
+         <font>
+            <Font name="Centaur" size="27.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
