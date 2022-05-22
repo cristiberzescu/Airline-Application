@@ -58,6 +58,17 @@ public class AdministratorPageController {
         window.show();
     }
     @FXML
+    public void handleEdit(){
+        try {
+            Stage stage = (Stage) editButton.getScene().getWindow();
+            Parent viewRegisterRoot = FXMLLoader.load(getClass().getClassLoader().getResource("editFlightPage.fxml"));
+            Scene scene = new Scene(viewRegisterRoot, 900, 480);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
     public void handleDeleteFlight(javafx.event.ActionEvent deleteFlightsPage) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("deleteFlightPage.fxml"));

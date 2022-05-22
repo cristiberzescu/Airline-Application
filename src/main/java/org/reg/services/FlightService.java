@@ -4,7 +4,7 @@ import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.reg.model.Flight;
 
-
+import java.util.List;
 
 import static org.reg.services.FileSystemService.getPathToFlight;
 
@@ -28,5 +28,23 @@ public class FlightService {
     public static ObjectRepository<Flight> getFlightRepository() {
         return flightRepository;
     }
+
+    public static Flight getFlightFromDatabase(String username) {
+        for(Flight flight : flightRepository.find()) {
+            if(flight.getName().equals(username)) {
+                return flight;
+            }
+        }
+        return null;
+    }
+
+    public static Nitrite getDatabase() {
+        return database;
+    }
+
+    public static List<Flight> getAllFlights() {
+        return flightRepository.find().toList();
+    }
+
 
 }

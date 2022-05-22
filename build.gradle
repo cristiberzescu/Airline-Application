@@ -40,15 +40,5 @@ dependencies {
 }
 
 
-test {
-    finalizedBy jacocoTestReport // report is always generated after tests run
-    useJUnitPlatform()
-}
-
-
-
-jacocoTestReport {
-    dependsOn test // tests are required to run before generating the report
-}
 
 mainClassName = 'org.reg.Main'
