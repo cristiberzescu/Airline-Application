@@ -57,6 +57,17 @@ public class AdministratorPageController {
         window.setScene(LoginScene);
         window.show();
     }
+    @FXML
+    public void handleDeleteFlight(javafx.event.ActionEvent deleteFlightsPage) throws IOException {
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getClassLoader().getResource("deleteFlightPage.fxml"));
+        Parent viewFlights = Loader.load();
+        Scene LoginScene = new Scene(viewFlights, 700, 600);
+        Stage window = (Stage) ((Node) deleteFlightsPage.getSource()).getScene().getWindow();
+        window.setScene(LoginScene);
+        window.show();
+    }
+
 
 
 
