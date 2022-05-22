@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="445.0" prefWidth="610.0" style="-fx-background-color: #CACFD2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.AdministratorPageController">
+<AnchorPane prefHeight="445.0" prefWidth="610.0" style="-fx-background-color: #CACFD2;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.AdministratorPageController">
     <children>
         <Button fx:id="logoutButton" layoutX="257.0" layoutY="380.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="50.0" prefWidth="110.0" text="Logout">
             <font>
@@ -16,10 +17,15 @@
                 <Image url="@logo1.png" />
             </image>
         </ImageView>
-        <Button fx:id="addButton" layoutX="250.0" layoutY="99.0" mnemonicParsing="false" onAction="#handleAddFlight" prefHeight="50.0" prefWidth="191.0" text="Add a flight">
+        <Button fx:id="addButton" layoutX="28.0" layoutY="99.0" mnemonicParsing="false" onAction="#handleAddFlight" prefHeight="50.0" prefWidth="191.0" text="Add a flight">
             <font>
                 <Font name="Times New Roman" size="20.0" />
             </font>
         </Button>
+        <Button fx:id="flightListButton" layoutX="22.0" layoutY="196.0" mnemonicParsing="false"  prefHeight="52.0" prefWidth="203.0" text="View all flights!">
+         <font>
+            <Font name="Centaur" size="27.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
