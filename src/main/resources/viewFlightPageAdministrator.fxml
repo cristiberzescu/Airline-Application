@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #00BFFF;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #00BFFF;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.ViewFlightController">
     <children>
         <Button fx:id="backButton" layoutX="280.0" layoutY="436.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="139.0" text="Back">
             <font>
