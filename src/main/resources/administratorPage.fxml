@@ -17,12 +17,17 @@
                 <Image url="@logo1.png" />
             </image>
         </ImageView>
-        <Button fx:id="addButton" layoutX="28.0" layoutY="99.0" mnemonicParsing="false" onAction="#handleAddFlight" prefHeight="50.0" prefWidth="191.0" text="Add a flight">
+        <Button fx:id="addButton" layoutX="28.0" layoutY="99.0" mnemonicParsing="false" onAction="#handleAddFlight" prefHeight="50.0" prefWidth="191.0" text="Add a flight!">
             <font>
-                <Font name="Times New Roman" size="20.0" />
+                <Font name="Centaur" size="26.0" />
             </font>
         </Button>
-        <Button fx:id="flightListButton" onAction="#handleShowFlights" layoutX="22.0" layoutY="196.0" mnemonicParsing="false"  prefHeight="52.0" prefWidth="203.0" text="View all flights!">
+        <Button fx:id="flightListButton" layoutX="22.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleShowFlights" prefHeight="52.0" prefWidth="203.0" text="View all flights!">
+         <font>
+            <Font name="Centaur" size="27.0" />
+         </font>
+      </Button>
+        <Button fx:id="cancelButton" layoutX="28.0" layoutY="280.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" text="Cancel flights!">
          <font>
             <Font name="Centaur" size="27.0" />
          </font>
