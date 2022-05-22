@@ -31,7 +31,7 @@
             <Font name="Centaur" size="27.0" />
          </font>
       </Button>
-        <Button fx:id="flightListButton" layoutX="27.0" layoutY="249.0" mnemonicParsing="false"  prefHeight="52.0" prefWidth="220.0" text="View all flights!">
+        <Button fx:id="flightListButton" layoutX="27.0" layoutY="249.0" mnemonicParsing="false" onAction="#handleShowFlights" prefHeight="52.0" prefWidth="220.0" text="View all flights!">
          <font>
             <Font name="Centaur" size="27.0" />
          </font>
