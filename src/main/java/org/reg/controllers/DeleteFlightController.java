@@ -14,6 +14,10 @@ import org.reg.model.Flight;
 import org.reg.model.User;
 import org.reg.services.FlightService;
 import org.reg.services.UserService;
+import javafx.event.ActionEvent;
+import javafx.scene.control.TableCell;
+import javafx.util.Callback;
+
 
 import java.io.IOException;
 
@@ -89,6 +93,48 @@ public class DeleteFlightController {
         fillFlightsTableView();
         flightsTableView.setEditable(true);
     }
+    @FXML
+    private void handleDelete(ActionEvent actionEvent) {
+        TableColumn<Flight, Void> colBtn = new TableColumn();
 
+        Callback<TableColumn<Flight, Void>, TableCell<Flight, Void>> cellFactory = new Callback<TableColumn<Flight, Void>, TableCell<Flight, Void>>() {
+            @Override
+            public TableCell<Flight, Void> call(final TableColumn<Flight, Void> param) {
+                final TableCell<Flight, Void> cell = new TableCell<Flight, Void>() {
+
+                    private final Button btn = new Button("Delete");
+                    {
+                        btn.setOnAction((ActionEvent event) -> {
+
+                            Flight deletedFlight = getTableView().getItems().get(getIndex());
+
+                            flightsTableView.getItems().remove(deletedFlight);
+
+                            FlightService.getFlightRepository().remove(deletedFlight);
+                            btn.setDisable(true);
+                        });
+                    }
+
+                    @Override
+                    public void updateItem(Void item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(btn);
+                        }
+                    }
+                };
+                return cell;
+            }
+        };
+
+        colBtn.setCellFactory(cellFactory);
+
+        flightsTableView.getColumns().add(colBtn);
+
+        deleteButton.setDisable(true);
+
+    }
 }
 

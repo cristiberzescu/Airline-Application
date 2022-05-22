@@ -12,7 +12,7 @@
             <font>
                 <Font name="Times New Roman" size="21.0" />
             </font></Button>
-        <Button fx:id="deleteButton" layoutX="42.0" layoutY="484.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="109.0" text="Delete">
+        <Button fx:id="deleteButton" layoutX="42.0" layoutY="484.0" mnemonicParsing="false" onAction="#handleDelete" prefHeight="66.0" prefWidth="109.0" text="Delete">
             <font>
                 <Font name="Times New Roman" size="23.0" />
             </font></Button>
