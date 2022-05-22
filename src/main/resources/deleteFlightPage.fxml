@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #00BFFF;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.DeleteFlightController">
     <children>
         <TableView fx:id="flightsTableView" layoutY="147.0" prefHeight="306.0" prefWidth="700.0" style="-fx-background-color: yellow;" />
-        <Button fx:id="backButton" layoutX="582.0" layoutY="493.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="86.0" text="Back">
+        <Button fx:id="backButton" layoutX="582.0" layoutY="493.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="49.0" prefWidth="86.0" text="Back">
             <font>
                 <Font name="Times New Roman" size="21.0" />
             </font></Button>
