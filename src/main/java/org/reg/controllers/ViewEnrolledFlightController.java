@@ -68,7 +68,11 @@ public class ViewEnrolledFlightController {
             }
         }
     }
-
+    @FXML
+    private void initialize(){
+        fillFlightsTableView();
+        flightsTableView.setEditable(true);
+    }
     public void handleBack(javafx.event.ActionEvent login) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("customerPage.fxml"));
