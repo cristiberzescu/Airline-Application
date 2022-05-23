@@ -7,6 +7,11 @@
 
 <AnchorPane prefHeight="445.0" prefWidth="610.0" style="-fx-background-color: #CACFD2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.AdministratorPageController">
     <children>
+        <Label layoutX="44.0" layoutY="14.0" prefHeight="50.0" prefWidth="450.0" text="Welcome Administrator!">
+            <font>
+                <Font name="Centaur" size="24.0" />
+            </font>
+        </Label>
         <Button fx:id="logoutButton" layoutX="257.0" layoutY="380.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="50.0" prefWidth="110.0" text="Logout">
             <font>
                 <Font name="Times New Roman" size="21.0" />
