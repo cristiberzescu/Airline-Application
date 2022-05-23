@@ -19,6 +19,7 @@ public class FileSystemService {
         return FLIGHTS_HOME_PATH.resolve(Paths.get(".", path));
     }
 
+
     public static Path getApplicationHomeFolder() {
         return Paths.get(USER_FOLDER, APPLICATION_FOLDER);
     }
