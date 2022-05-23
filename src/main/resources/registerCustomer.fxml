@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="446.0" prefWidth="545.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.RegisterCustomerController">
+<AnchorPane prefHeight="446.0" prefWidth="545.0" style="-fx-background-color: #CACFD2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.RegisterCustomerController">
     <children>
         <TextField fx:id="name" layoutX="141.0" layoutY="142.0" mouseTransparent="true" prefHeight="26.0" prefWidth="251.0" />
         <Label layoutX="8.0" layoutY="140.0" prefHeight="24.0" prefWidth="116.0" text="Full Name" textFill="#0c1649">
@@ -39,7 +39,7 @@
                 <Font name="Centaur" size="27.0" />
             </font>
         </Text>
-        <ImageView fitHeight="173.0" fitWidth="171.0" layoutX="382.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="133.0" fitWidth="131.0" layoutX="412.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@logo1.png" />
             </image>
